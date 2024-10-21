@@ -13,6 +13,7 @@ const notesBtn = document.getElementById('notesBtn'); // Notes button in media p
 const notesApp = document.getElementById('notesApp'); // Notes app modal
 const notesTextarea = document.getElementById('notesTextarea'); // Notes textarea
 const saveNotesBtn = document.getElementById('saveNotesBtn'); // Save notes button
+const exitSettingsBtn = document.getElementById('exitSettingsBtn'); // Exit settings button
 
 let notesEnabled = false;
 
@@ -40,9 +41,7 @@ closeBtn.addEventListener('click', () => {
 // Play song button event: Play the audio
 playSongBtn.addEventListener('click', () => {
     console.log('Play Song button clicked'); // Debugging
-    audioPlayer.play().then(() => {
-        console.log('Audio is playing'); // Debugging if playback starts
-    }).catch(error => {
+    audioPlayer.play().catch((error) => {
         console.error('Error playing audio:', error); // Log error if playback fails
     });
 });
@@ -66,6 +65,12 @@ enableNotesBtn.addEventListener('click', () => {
         enableNotesBtn.innerText = 'Enable Notes'; // Change button text
         enableNotesBtn.style.backgroundColor = ''; // Reset button color
     }
+});
+
+// Exit button click event: Hide settings menu
+exitSettingsBtn.addEventListener('click', () => {
+    console.log('Exit button clicked, hiding settings menu'); // Debugging
+    settingsMenu.style.display = 'none'; // Hide settings menu
 });
 
 // Notes button click event: Open notes app
