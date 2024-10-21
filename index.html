@@ -13,6 +13,8 @@
             justify-content: center;
             height: 100vh;
             background-color: #f0f0f0;
+            margin: 0;
+            overflow: hidden;
         }
 
         h1 {
@@ -39,12 +41,13 @@
             background-color: #45a049;
         }
 
-        /* Media player styles */
+        /* Fullscreen media player styles */
         .media-player {
-            position: relative;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 1200px;
-            height: 80vh;
+            height: 100%;
             background-color: black;
             display: none; /* Hidden by default */
             z-index: 10;
@@ -58,14 +61,15 @@
 
         .close-btn {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 20px;
+            right: 20px;
             background: red;
             color: white;
-            padding: 10px;
+            padding: 15px;
             border: none;
             cursor: pointer;
             z-index: 11;
+            font-size: 20px;
         }
     </style>
 </head>
@@ -77,7 +81,7 @@
     <button id="btn2">Button 2</button>
     <button id="btn3">Button 3</button>
 
-    <!-- Media player div -->
+    <!-- Fullscreen media player div -->
     <div class="media-player" id="mediaPlayer">
         <iframe id="iframePlayer"></iframe>
         <button class="close-btn" id="closeBtn">Close</button>
