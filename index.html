@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matrix Background</title>
+    <title>Rainbow Background</title>
     <style>
         body {
             margin: 0;
@@ -11,10 +11,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
             font-family: Arial, sans-serif;
-            background: url('textures/zHzj3N.gif') no-repeat center center fixed; /* Set the GIF as the background */
-            background-size: cover; /* Cover the entire viewport */
+            background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+            background-size: 300% 300%;
+            animation: rainbow 10s ease infinite;
+        }
+
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .button {
@@ -26,7 +32,6 @@
             cursor: pointer;
             transition: background-color 0.3s, transform 0.2s;
         }
-
         .button:hover {
             background-color: #f0f0f0;
             transform: scale(1.05);
@@ -66,37 +71,13 @@
             cursor: pointer;
             z-index: 1000;
         }
-
-        /* Chat area */
-        #chat-container {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            width: 300px;
-            max-height: 400px;
-            overflow-y: auto;
-            background: white;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            display: none; /* Initially hidden */
-        }
-
-        #chat-input {
-            width: calc(100% - 22px);
-            padding: 10px;
-        }
-
-        #messages {
-            padding: 10px;
-            max-height: 300px;
-            overflow-y: auto;
-        }
     </style>
 </head>
 <body>
     <div>
-        <button class="button" id="button1">Open FreakCraft</button>
-        <button class="button" id="button2">Open Group Chat</button>
+        <button class="button" id="button1">Button 1</button>
+        <button class="button">Button 2</button>
+        <button class="button">Button 3</button>
     </div>
 
     <!-- Fullscreen container with an iframe for the "media player" -->
@@ -105,27 +86,13 @@
         <iframe id="fullscreen-iframe" src=""></iframe>
     </div>
 
-    <!-- Chat container -->
-    <div id="chat-container">
-        <div id="messages"></div>
-        <input type="text" id="chat-input" placeholder="Type a message...">
-    </div>
-
-    <script src="/socket.io/socket.io.js"></script> <!-- Include Socket.io script -->
     <script>
-        const socket = io(); // Initialize the Socket.io connection
-
         // Show the iframe when Button 1 is pressed
         document.getElementById("button1").addEventListener("click", function() {
-            // Set the iframe's source to the FreakCraft site
-            document.getElementById("fullscreen-iframe").src = 'https://egyorenis.github.io/FreakCraft/';
+            // Set the iframe's source to the raw URL of eagler.html
+            document.getElementById("fullscreen-iframe").src = 'YOUR_GITHUB_RAW_URL';
             // Show the fullscreen container
             document.getElementById("fullscreen-container").style.display = 'flex';
-        });
-
-        // Open the chat when Button 2 is pressed
-        document.getElementById("button2").addEventListener("click", function() {
-            document.getElementById("chat-container").style.display = 'block'; // Show chat
         });
 
         // Exit the fullscreen iframe when the exit button is pressed
@@ -134,22 +101,6 @@
             document.getElementById("fullscreen-container").style.display = 'none';
             // Stop the iframe from loading by clearing the src
             document.getElementById("fullscreen-iframe").src = '';
-        });
-
-        // Handle chat input and message sending
-        document.getElementById("chat-input").addEventListener("keypress", function(event) {
-            if (event.key === 'Enter') {
-                const message = event.target.value;
-                socket.emit('chat message', message); // Send message to server
-                event.target.value = ''; // Clear input
-            }
-        });
-
-        // Listen for messages from the server
-        socket.on('chat message', function(msg) {
-            const messagesDiv = document.getElementById('messages');
-            messagesDiv.innerHTML += '<div>' + msg + '</div>'; // Display the message
-            messagesDiv.scrollTop = messagesDiv.scrollHeight; // Scroll to bottom
         });
     </script>
 </body>
