@@ -67,10 +67,11 @@ enableNotesBtn.addEventListener('click', () => {
     }
 });
 
-// Exit button click event: Hide settings menu
+// Exit button click event: Hide settings menu and show settings button
 exitSettingsBtn.addEventListener('click', () => {
     console.log('Exit button clicked, hiding settings menu'); // Debugging
     settingsMenu.style.display = 'none'; // Hide settings menu
+    settingsBtn.style.display = 'block'; // Ensure settings button is visible
 });
 
 // Notes button click event: Open notes app
