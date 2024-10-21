@@ -165,6 +165,17 @@
         .notes-app button:hover {
             background-color: #0056b3;
         }
+
+        /* Exit button for settings */
+        .exit-settings-btn {
+            margin-top: 10px;
+            background: #dc3545; /* Red color */
+            color: white;
+        }
+
+        .exit-settings-btn:hover {
+            background: #c82333; /* Darker red */
+        }
     </style>
 </head>
 <body>
@@ -185,6 +196,7 @@
     <!-- Settings menu -->
     <div class="settings" id="settingsMenu">
         <button id="enableNotes">Enable Notes</button>
+        <button class="exit-settings-btn" id="exitSettingsBtn">Exit</button> <!-- Exit button -->
     </div>
 
     <!-- Button to open settings -->
