@@ -3,105 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rainbow Background</title>
+    <title>FreakCraft</title>
     <style>
         body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             font-family: Arial, sans-serif;
-            background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
-            background-size: 300% 300%;
-            animation: rainbow 10s ease infinite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
         }
 
-        @keyframes rainbow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        h1 {
+            font-size: 72px;
+            color: black;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px #aaaaaa;
+            margin-bottom: 50px;
         }
 
-        .button {
-            background-color: #ffffff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        button {
+            font-size: 24px;
             padding: 10px 20px;
             margin: 10px;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .button:hover {
-            background-color: #f0f0f0;
-            transform: scale(1.05);
-        }
-
-        /* Fullscreen iframe container */
-        #fullscreen-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.9);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-        }
-
-        /* Fullscreen iframe */
-        #fullscreen-iframe {
-            width: 100%;
-            height: 100%;
+            border-radius: 8px;
             border: none;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s ease;
         }
 
-        /* Exit button */
-        .exit-button {
+        button:hover {
+            background-color: #45a049;
+        }
+
+        iframe {
+            display: none;
+            width: 100%;
+            height: 80vh;
+            border: none;
+            position: absolute;
+            top: 10%;
+            left: 0;
+            z-index: 10;
+        }
+
+        .media-player {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            height: 80vh;
+            background: black;
+            display: none;
+            z-index: 100;
+        }
+
+        .close-btn {
             position: absolute;
             top: 10px;
             right: 10px;
-            background-color: #ff5555;
-            border: none;
+            background: red;
             color: white;
-            padding: 10px 20px;
-            font-size: 18px;
+            padding: 10px;
+            border: none;
             cursor: pointer;
-            z-index: 1000;
+            z-index: 101;
         }
     </style>
 </head>
 <body>
-    <div>
-        <button class="button" id="button1">Eagler-Craft-1.9.4</button>
-        <button class="button">Button 2</button>
-        <button class="button">Button 3</button>
+
+    <h1>WE ARE FREAKS!</h1>
+
+    <button id="btn1">Open EaglerCraft</button>
+    <button id="btn2">Button 2</button>
+    <button id="btn3">Button 3</button>
+
+    <!-- Media player-like interface -->
+    <div class="media-player" id="mediaPlayer">
+        <iframe id="iframePlayer"></iframe>
+        <button class="close-btn" id="closeBtn">Close</button>
     </div>
 
-    <!-- Fullscreen container with an iframe for the "media player" -->
-    <div id="fullscreen-container">
-        <button class="exit-button" id="exit-button">Exit</button>
-        <iframe id="fullscreen-iframe" src=""></iframe>
-    </div>
-
-    <script>
-        // Show the iframe when Button 1 is pressed
-        document.getElementById("button1").addEventListener("click", function() {
-            // Set the iframe's source to the raw URL of eagler.html
-            document.getElementById("fullscreen-iframe").src = 'https://github.com/Egyorenis/FreakCraft';
-            // Show the fullscreen container
-            document.getElementById("fullscreen-container").style.display = 'flex';
-        });
-
-        // Exit the fullscreen iframe when the exit button is pressed
-        document.getElementById("exit-button").addEventListener("click", function() {
-            // Hide the fullscreen container
-            document.getElementById("fullscreen-container").style.display = 'none';
-            // Stop the iframe from loading by clearing the src
-            document.getElementById("fullscreen-iframe").src = '';
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
