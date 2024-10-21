@@ -36,14 +36,72 @@
             background-color: #f0f0f0;
             transform: scale(1.05);
         }
+
+        /* Fullscreen iframe container */
+        #fullscreen-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        /* Fullscreen iframe */
+        #fullscreen-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Exit button */
+        .exit-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff5555;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
     <div>
-        <button class="button">Button 1</button>
+        <button class="button" id="button1">Eagler-Craft</button>
         <button class="button">Button 2</button>
         <button class="button">Button 3</button>
     </div>
+
+    <!-- Fullscreen container with an iframe for the "media player" -->
+    <div id="fullscreen-container">
+        <button class="exit-button" id="exit-button">Exit</button>
+        <iframe id="fullscreen-iframe" src=""></iframe>
+    </div>
+
+    <script>
+        // Show the iframe when Button 1 is pressed
+        document.getElementById("button1").addEventListener("click", function() {
+            // Set the iframe's source to eagler.html
+            document.getElementById("fullscreen-iframe").src = 'eagler.html';
+            // Show the fullscreen container
+            document.getElementById("fullscreen-container").style.display = 'flex';
+        });
+
+        // Exit the fullscreen iframe when the exit button is pressed
+        document.getElementById("exit-button").addEventListener("click", function() {
+            // Hide the fullscreen container
+            document.getElementById("fullscreen-container").style.display = 'none';
+            // Stop the iframe from loading by clearing the src
+            document.getElementById("fullscreen-iframe").src = '';
+        });
+    </script>
 </body>
 </html>
-
