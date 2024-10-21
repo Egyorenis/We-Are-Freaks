@@ -15,6 +15,7 @@
             background-color: #f0f0f0;
             margin: 0;
             overflow: hidden;
+            position: relative; /* To position the play button */
         }
 
         h1 {
@@ -71,14 +72,28 @@
             z-index: 11;
             font-size: 20px;
         }
+
+        /* Play song button styles */
+        .play-song-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
 
     <h1>WE ARE FREAKS!</h1>
 
-    <button id="btn1">EaglerCraft 1.9.4 </button>
-    <button id="btn2">MonkeyMart</button> <!-- Renamed Button 2 -->
+    <button id="btn1">Open EaglerCraft</button>
+    <button id="btn2">Open Monkey Game</button>
     <button id="btn3">Button 3</button>
 
     <!-- Fullscreen media player div -->
@@ -86,6 +101,12 @@
         <iframe id="iframePlayer"></iframe>
         <button class="close-btn" id="closeBtn">Close</button>
     </div>
+
+    <!-- Button to play the song -->
+    <button class="play-song-btn" id="playSongBtn">Play Song</button>
+
+    <!-- Audio element -->
+    <audio id="audioPlayer" src="textures/God_Save_the_Schools_Winbooks.custom_score.mp3"></audio>
 
     <script src="script.js"></script>
 </body>
