@@ -20,7 +20,7 @@ eaglerVersionsBtn.addEventListener('click', () => {
 // Version 1.11 button
 document.getElementById('version1_11').addEventListener('click', () => {
     console.log('Eagler Craft 1.11 clicked');
-    iframePlayer.src = 'eagler1_11.html';
+    iframePlayer.src = 'eagler.html';
     mediaPlayer.style.display = 'block';
 });
 
@@ -42,6 +42,12 @@ document.getElementById('version_mobile').addEventListener('click', () => {
 document.getElementById('btn2').addEventListener('click', () => {
     console.log('Monkey Game button clicked, opening Monkey.html');
     iframePlayer.src = 'Monkey.html'; // Open Monkey game
+    mediaPlayer.style.display = 'block';
+});
+
+document.getElementById('btn3').addEventListener('click', () => {
+    console.log('Monkey Game button clicked, opening RetroBowlV2T2 (1).html');
+    iframePlayer.src = 'RetroBowlV2T2 (1).html'; // Open Monkey game
     mediaPlayer.style.display = 'block';
 });
 
