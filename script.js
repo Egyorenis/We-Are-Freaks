@@ -51,7 +51,7 @@ eaglerVersionsBtn.addEventListener('click', () => {
 const version1_11 = document.getElementById('version1_11');
 version1_11.addEventListener('click', () => {
     console.log('Eagler Craft 1.11 button clicked, opening eagler1_11.html'); // Debugging
-    iframePlayer.src = 'eagler1_11.html'; // Set the iframe source to eagler1_11.html
+    iframePlayer.src = 'eagler.html'; // Set the iframe source to eagler1_11.html
     mediaPlayer.style.display = 'block'; // Show the media player
 });
 
