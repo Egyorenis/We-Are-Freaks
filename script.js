@@ -25,6 +25,13 @@ document.getElementById('version1_11').addEventListener('click', () => {
     mediaPlayer.style.display = 'block';
 });
 
+// Version 1.21 button
+document.getElementById('version21').addEventListener('click', () => {
+    console.log('Eagler Craft 1.11 clicked');
+    iframePlayer.src = 'Eagly.html';
+    mediaPlayer.style.display = 'block';
+});
+
 // Version 1.9.4 button
 document.getElementById('version1_9_4').addEventListener('click', () => {
     console.log('Eagler 1.9.4 clicked');
