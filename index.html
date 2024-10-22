@@ -46,8 +46,6 @@
             background-color: #4CAF50;
             color: white;
             transition: background-color 0.3s ease;
-            position: relative; /* To keep the buttons on top */
-            z-index: 2; /* Ensures buttons are on top */
         }
 
         button:hover {
@@ -136,53 +134,6 @@
         .version-buttons button {
             background-color: #555;
         }
-
-        /* Eye styles */
-        #eye {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px; /* Width of the eye */
-            height: 300px; /* Height of the eye */
-            background: white;
-            border-radius: 50%; /* Makes it a circle */
-            border: 5px solid black; /* Border around the eye */
-            z-index: 0; /* Behind other elements */
-        }
-
-        #pupil {
-            width: 60px; /* Width of the pupil */
-            height: 60px; /* Height of the pupil */
-            background: black;
-            border-radius: 50%;
-            position: absolute;
-            transition: transform 0.1s ease; /* Smooth pupil movement */
-            box-shadow: 0 0 10px green; /* Outer ring glow */
-        }
-
-        /* Pumpkin styles */
-        .pumpkin {
-            position: absolute;
-            width: 50px; /* Width of the pumpkin */
-            height: 50px; /* Height of the pumpkin */
-            color: orange; /* Pumpkin color */
-            font-size: 30px; /* Font size for pumpkin */
-            text-align: center; /* Center text in pumpkin */
-            z-index: 1; /* Above the eye */
-        }
-
-        .pumpkin.left {
-            left: 20px; /* Position on the left side */
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .pumpkin.right {
-            right: 20px; /* Position on the right side */
-            top: 50%;
-            transform: translateY(-50%);
-        }
     </style>
 </head>
 <body>
@@ -211,41 +162,13 @@
     <div class="version-buttons" id="versionButtons">
         <button id="version1_11">Eagler Craft 1.11</button>
         <button id="version1_9_4">Eagler 1.9.4</button>
-        <button id="version_mobile">EaglerCraft 1.21 (IN DEVELOPMENT, FEATURES NEED ADDED, EXPECT BUGS!)</button>
+        <button id="version_mobile">1.21 EaglerCraft</button> <!-- Updated button -->
+        <button id="version21">Eagler Craft 1.21!!</button>
     </div>
 
     <!-- Updated audio element with raw link -->
     <audio id="audioPlayer" src="https://raw.githubusercontent.com/Egyorenis/We-Are-Freaks/main/textures/God_Save_the_Schools_Winbooks.custom_score.mp3"></audio>
 
-    <!-- Eye elements -->
-    <div id="eye">
-        <div id="pupil"></div>
-    </div>
-
-    <!-- Pumpkin elements -->
-    <div class="pumpkin left">🎃</div>
-    <div class="pumpkin right">🎃</div>
-
     <script src="script.js"></script>
-    <script>
-        // Eyeball feature
-        const eye = document.getElementById('eye');
-        const pupil = document.getElementById('pupil');
-
-        // Move pupil based on cursor position
-        document.addEventListener('mousemove', (event) => {
-            const eyeRect = eye.getBoundingClientRect();
-            const eyeCenterX = eyeRect.left + eyeRect.width / 2;
-            const eyeCenterY = eyeRect.top + eyeRect.height / 2;
-            const deltaX = event.clientX - eyeCenterX;
-            const deltaY = event.clientY - eyeCenterY;
-            const distance = Math.min(Math.sqrt(deltaX * deltaX + deltaY * deltaY), 30); // Max pupil distance
-            const angle = Math.atan2(deltaY, deltaX);
-            const pupilX = distance * Math.cos(angle);
-            const pupilY = distance * Math.sin(angle);
-
-            pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
-        });
-    </script>
 </body>
 </html>
