@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FreakCraft</title>
+    <link rel="icon" type="image/png" href="Favicon.png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,10 +28,9 @@
         }
 
         h2 {
-            font-size: 24px; /* Adjust the font size as needed */
-            color: black;
-            margin-bottom: 40px; /* Adjust spacing between h2 and button container */
-            text-align: center; /* Center-align the text */
+            font-size: 24px;
+            color: gray;
+            margin-bottom: 20px;
         }
 
         .button-container {
@@ -100,14 +100,12 @@
 
         /* Eagler Craft Versions button styles */
         .eagler-versions-btn {
-            position: absolute;
-            top: 10px;
-            left: 10px;
+            font-size: 24px;
+            padding: 10px 20px;
             background-color: #333;
             color: white;
-            padding: 10px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
         }
 
@@ -122,6 +120,15 @@
         .version-buttons button {
             background-color: #555;
         }
+
+        /* Footer text style */
+        .footer-text {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 16px;
+            color: #888;
+        }
     </style>
 </head>
 <body>
@@ -130,7 +137,7 @@
     <h2>"Take me down once, shame on you. Take me down twice, shame on you again."</h2>
 
     <div class="button-container">
-        <button id="btn1">Open EaglerCraft</button>
+        <button class="eagler-versions-btn" id="eaglerVersionsBtn">Eagler Craft Versions</button>
         <button id="btn2">Open Monkey Game</button>
         <button id="btn3">Button 3</button>
     </div>
@@ -145,15 +152,17 @@
     <button class="play-song-btn" id="playSongBtn">Play Song</button>
 
     <!-- Eagler Craft Versions button and version buttons -->
-    <button class="eagler-versions-btn" id="eaglerVersionsBtn">Eagler Craft Versions</button>
     <div class="version-buttons" id="versionButtons">
         <button id="version1_11">Eagler Craft 1.11</button>
         <button id="version1_9_4">Eagler 1.9.4</button>
-        <button id="version_mobile_1_8">EaglerCraft Mobile (1.8)</button> <!-- New Button -->
+        <button id="version_mobile">EaglerCraft Mobile (1.8)</button>
     </div>
 
     <!-- Updated audio element with raw link -->
     <audio id="audioPlayer" src="https://raw.githubusercontent.com/Egyorenis/We-Are-Freaks/main/textures/God_Save_the_Schools_Winbooks.custom_score.mp3"></audio>
+
+    <!-- Footer text -->
+    <div class="footer-text">I am just a 13 year old kid. Do not pressure me for updates, please!</div>
 
     <script src="script.js"></script>
 </body>
