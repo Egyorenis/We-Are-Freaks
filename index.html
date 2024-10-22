@@ -90,6 +90,31 @@
             cursor: pointer;
             font-size: 18px;
         }
+
+        /* Eagler Craft Versions button styles */
+        .eagler-versions-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Hidden by default */
+        .version-buttons {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .version-buttons button {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
@@ -110,6 +135,13 @@
 
     <!-- Button to play the song -->
     <button class="play-song-btn" id="playSongBtn">Play Song</button>
+
+    <!-- Eagler Craft Versions button and version buttons -->
+    <button class="eagler-versions-btn" id="eaglerVersionsBtn">Eagler Craft Versions</button>
+    <div class="version-buttons" id="versionButtons">
+        <button id="version1_11">Eagler Craft 1.11</button>
+        <button id="version1_9_4">Eagler 1.9.4</button>
+    </div>
 
     <!-- Updated audio element with raw link -->
     <audio id="audioPlayer" src="https://raw.githubusercontent.com/Egyorenis/We-Are-Freaks/main/textures/God_Save_the_Schools_Winbooks.custom_score.mp3"></audio>
