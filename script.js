@@ -42,7 +42,7 @@ document.getElementById('version1_9_4').addEventListener('click', () => {
 // EaglerCraft Mobile (1.8) button
 document.getElementById('version_mobile').addEventListener('click', () => {
     console.log('EaglerCraft Mobile (1.8) clicked');
-    iframePlayer.src = 'Eagler-3.html';
+    iframePlayer.src = 'Eagly.html';
     mediaPlayer.style.display = 'block';
 });
 
