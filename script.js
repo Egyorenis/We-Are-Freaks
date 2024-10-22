@@ -62,3 +62,11 @@ version1_9_4.addEventListener('click', () => {
     iframePlayer.src = 'Eagler-2.html'; // Set the iframe source to Eagler-2.html
     mediaPlayer.style.display = 'block'; // Show the media player
 });
+
+// Version Mobile 1.8 button event: Open EaglerCraft Mobile (1.8)
+const version_mobile_1_8 = document.getElementById('version_mobile_1_8');
+version_mobile_1_8.addEventListener('click', () => {
+    console.log('EaglerCraft Mobile (1.8) button clicked, opening Eagler-3.html'); // Debugging
+    iframePlayer.src = 'Eagler-3.html'; // Set the iframe source to Eagler-3.html
+    mediaPlayer.style.display = 'block'; // Show the media player
+});
