@@ -134,6 +134,33 @@
         .version-buttons button {
             background-color: #555;
         }
+
+        /* Eye styles */
+        #eye {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px; /* Width of the eye */
+            height: 100px; /* Height of the eye */
+            background: white;
+            border-radius: 100px;
+            border: 5px solid black; /* Border around the eye */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 0; /* Behind other elements */
+        }
+
+        #pupil {
+            width: 40px; /* Width of the pupil */
+            height: 40px; /* Height of the pupil */
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            transition: transform 0.1s ease; /* Smooth pupil movement */
+            box-shadow: 0 0 10px green; /* Outer ring glow */
+        }
     </style>
 </head>
 <body>
@@ -169,6 +196,31 @@
     <!-- Updated audio element with raw link -->
     <audio id="audioPlayer" src="https://raw.githubusercontent.com/Egyorenis/We-Are-Freaks/main/textures/God_Save_the_Schools_Winbooks.custom_score.mp3"></audio>
 
+    <!-- Eye elements -->
+    <div id="eye">
+        <div id="pupil"></div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+        // Eyeball feature
+        const eye = document.getElementById('eye');
+        const pupil = document.getElementById('pupil');
+
+        // Move pupil based on cursor position
+        document.addEventListener('mousemove', (event) => {
+            const eyeRect = eye.getBoundingClientRect();
+            const eyeCenterX = eyeRect.left + eyeRect.width / 2;
+            const eyeCenterY = eyeRect.top + eyeRect.height / 2;
+            const deltaX = event.clientX - eyeCenterX;
+            const deltaY = event.clientY - eyeCenterY;
+            const distance = Math.min(Math.sqrt(deltaX * deltaX + deltaY * deltaY), 30); // Max pupil distance
+            const angle = Math.atan2(deltaY, deltaX);
+            const pupilX = distance * Math.cos(angle);
+            const pupilY = distance * Math.sin(angle);
+
+            pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
+        });
+    </script>
 </body>
 </html>
