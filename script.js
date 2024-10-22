@@ -1,5 +1,6 @@
 // Select elements
 const btn2 = document.getElementById('btn2'); // Button 2 for Monkey.html
+const btn3 = document.getElementById('btn3'); // Button 3 for RetroBowlV2T2 (1).html
 const mediaPlayer = document.getElementById('mediaPlayer');
 const iframePlayer = document.getElementById('iframePlayer');
 const closeBtn = document.getElementById('closeBtn');
@@ -21,28 +22,21 @@ eaglerVersionsBtn.addEventListener('click', () => {
 // Version 1.11 button
 document.getElementById('version1_11').addEventListener('click', () => {
     console.log('Eagler Craft 1.11 clicked');
-    iframePlayer.src = 'eagler.html';
+    iframePlayer.src = 'eagler1_11.html'; // Open eagler1_11.html
     mediaPlayer.style.display = 'block';
 });
 
-// Version 1.21 button
-document.getElementById('version21').addEventListener('click', () => {
-    console.log('Eagler Craft 1.11 clicked');
-    iframePlayer.src = 'Eagly.html';
+// Version 1.21 button (renamed from 1.8 EaglerCraft)
+document.getElementById('version_mobile').addEventListener('click', () => {
+    console.log('1.21 EaglerCraft clicked');
+    iframePlayer.src = 'Eagly.html'; // Open Eagly.html
     mediaPlayer.style.display = 'block';
 });
 
 // Version 1.9.4 button
 document.getElementById('version1_9_4').addEventListener('click', () => {
     console.log('Eagler 1.9.4 clicked');
-    iframePlayer.src = 'Eagler-2.html';
-    mediaPlayer.style.display = 'block';
-});
-
-// EaglerCraft Mobile (1.8) button
-document.getElementById('version_mobile').addEventListener('click', () => {
-    console.log('EaglerCraft Mobile (1.8) clicked');
-    iframePlayer.src = 'Eagly.html';
+    iframePlayer.src = 'Eagler-2.html'; // Open Eagler-2.html
     mediaPlayer.style.display = 'block';
 });
 
@@ -54,7 +48,7 @@ btn2.addEventListener('click', () => {
 });
 
 // Button 3 click event: Open RetroBowlV2T2 (1).html
-document.getElementById('btn3').addEventListener('click', () => {
+btn3.addEventListener('click', () => {
     console.log('Button 3 clicked, opening RetroBowlV2T2 (1).html');
     iframePlayer.src = 'RetroBowlV2T2 (1).html'; // Open RetroBowl
     mediaPlayer.style.display = 'block';
@@ -70,7 +64,13 @@ closeBtn.addEventListener('click', () => {
 // Play song
 playSongBtn.addEventListener('click', () => {
     console.log('Play Song button clicked');
-    audioPlayer.play();
+    if (audioPlayer.paused) {
+        audioPlayer.play(); // Play the audio
+        playSongBtn.textContent = 'Pause Song'; // Change button text
+    } else {
+        audioPlayer.pause(); // Pause the audio
+        playSongBtn.textContent = 'Play Song'; // Change button text back
+    }
 });
 
 // Run in different tab functionality
