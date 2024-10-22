@@ -46,6 +46,8 @@
             background-color: #4CAF50;
             color: white;
             transition: background-color 0.3s ease;
+            position: relative; /* To keep the buttons on top */
+            z-index: 2; /* Ensures buttons are on top */
         }
 
         button:hover {
@@ -141,25 +143,45 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 200px; /* Width of the eye */
-            height: 100px; /* Height of the eye */
+            width: 300px; /* Width of the eye */
+            height: 300px; /* Height of the eye */
             background: white;
-            border-radius: 100px;
+            border-radius: 50%; /* Makes it a circle */
             border: 5px solid black; /* Border around the eye */
-            display: flex;
-            align-items: center;
-            justify-content: center;
             z-index: 0; /* Behind other elements */
         }
 
         #pupil {
-            width: 40px; /* Width of the pupil */
-            height: 40px; /* Height of the pupil */
+            width: 60px; /* Width of the pupil */
+            height: 60px; /* Height of the pupil */
             background: black;
             border-radius: 50%;
             position: absolute;
             transition: transform 0.1s ease; /* Smooth pupil movement */
             box-shadow: 0 0 10px green; /* Outer ring glow */
+        }
+
+        /* Pumpkin styles */
+        .pumpkin {
+            position: absolute;
+            width: 50px; /* Width of the pumpkin */
+            height: 50px; /* Height of the pumpkin */
+            color: orange; /* Pumpkin color */
+            font-size: 30px; /* Font size for pumpkin */
+            text-align: center; /* Center text in pumpkin */
+            z-index: 1; /* Above the eye */
+        }
+
+        .pumpkin.left {
+            left: 20px; /* Position on the left side */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .pumpkin.right {
+            right: 20px; /* Position on the right side */
+            top: 50%;
+            transform: translateY(-50%);
         }
     </style>
 </head>
@@ -189,8 +211,7 @@
     <div class="version-buttons" id="versionButtons">
         <button id="version1_11">Eagler Craft 1.11</button>
         <button id="version1_9_4">Eagler 1.9.4</button>
-        <button id="version_mobile">EaglerCraft Mobile (1.8)</button>
-        <button id="version21">Eagler Craft 1.21!!</button>
+        <button id="version_mobile">EaglerCraft 1.21 (IN DEVELOPMENT, FEATURES NEED ADDED, EXPECT BUGS!)</button>
     </div>
 
     <!-- Updated audio element with raw link -->
@@ -200,6 +221,10 @@
     <div id="eye">
         <div id="pupil"></div>
     </div>
+
+    <!-- Pumpkin elements -->
+    <div class="pumpkin left">🎃</div>
+    <div class="pumpkin right">🎃</div>
 
     <script src="script.js"></script>
     <script>
