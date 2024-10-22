@@ -1,11 +1,12 @@
 // Select elements
-const eaglerVersionsBtn = document.getElementById('eaglerVersionsBtn');
-const versionButtons = document.getElementById('versionButtons');
+const btn2 = document.getElementById('btn2'); // Button 2 for Monkey.html
 const mediaPlayer = document.getElementById('mediaPlayer');
 const iframePlayer = document.getElementById('iframePlayer');
 const closeBtn = document.getElementById('closeBtn');
-const playSongBtn = document.getElementById('playSongBtn');
-const audioPlayer = document.getElementById('audioPlayer');
+const playSongBtn = document.getElementById('playSongBtn'); // Button for playing the song
+const audioPlayer = document.getElementById('audioPlayer'); // Audio element
+const eaglerVersionsBtn = document.getElementById('eaglerVersionsBtn');
+const versionButtons = document.getElementById('versionButtons');
 
 // Toggle Eagler Craft Versions buttons
 eaglerVersionsBtn.addEventListener('click', () => {
@@ -39,15 +40,16 @@ document.getElementById('version_mobile').addEventListener('click', () => {
 });
 
 // Button 2 click event: Open Monkey.html in the media player iframe
-document.getElementById('btn2').addEventListener('click', () => {
+btn2.addEventListener('click', () => {
     console.log('Monkey Game button clicked, opening Monkey.html');
     iframePlayer.src = 'Monkey.html'; // Open Monkey game
     mediaPlayer.style.display = 'block';
 });
 
+// Button 3 click event: Open RetroBowlV2T2 (1).html
 document.getElementById('btn3').addEventListener('click', () => {
-    console.log('Monkey Game button clicked, opening RetroBowlV2T2 (1).html');
-    iframePlayer.src = 'RetroBowlV2T2 (1).html'; // Open Monkey game
+    console.log('Button 3 clicked, opening RetroBowlV2T2 (1).html');
+    iframePlayer.src = 'RetroBowlV2T2 (1).html'; // Open RetroBowl
     mediaPlayer.style.display = 'block';
 });
 
@@ -62,4 +64,14 @@ closeBtn.addEventListener('click', () => {
 playSongBtn.addEventListener('click', () => {
     console.log('Play Song button clicked');
     audioPlayer.play();
+});
+
+// Run in different tab functionality
+const runDifferentTabBtn = document.getElementById('runDifferentTabBtn');
+runDifferentTabBtn.addEventListener('click', () => {
+    console.log('Run in different tab clicked');
+    const currentSrc = iframePlayer.src; // Get the current iframe src
+    if (currentSrc) {
+        window.open(currentSrc, '_blank'); // Open the iframe src in a new tab
+    }
 });
