@@ -53,6 +53,7 @@ version1_11.addEventListener('click', () => {
     console.log('Eagler Craft 1.11 button clicked, opening eagler1_11.html'); // Debugging
     iframePlayer.src = 'eagler.html'; // Set the iframe source to eagler1_11.html
     mediaPlayer.style.display = 'block'; // Show the media player
+    versionButtons.style.display = 'none'; // Hide version buttons
 });
 
 // Version 1.9.4 button event: Open Eagler 1.9.4 (Eagler-2.html)
@@ -61,4 +62,23 @@ version1_9_4.addEventListener('click', () => {
     console.log('Eagler 1.9.4 button clicked, opening Eagler-2.html'); // Debugging
     iframePlayer.src = 'Eagler-2.html'; // Set the iframe source to Eagler-2.html
     mediaPlayer.style.display = 'block'; // Show the media player
+    versionButtons.style.display = 'none'; // Hide version buttons
 });
+
+// Upd logs button click event: Show modal
+const updLogsBtn = document.getElementById('updLogsBtn');
+const updLogsModal = document.getElementById('updLogsModal');
+const closeModal = document.getElementById('closeModal');
+
+updLogsBtn.addEventListener('click', () => {
+    console.log('Upd logs button clicked'); // Debugging
+    updLogsModal.style.display = 'block'; // Show modal
+});
+
+// Close modal event
+closeModal.addEventListener('click', () => {
+    console.log('Close modal clicked, hiding upd logs modal'); // Debugging
+    updLogsModal.style.display = 'none'; // Hide modal
+});
+
+// Close modal when clicking
