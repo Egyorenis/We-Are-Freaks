@@ -20,7 +20,7 @@ eaglerVersionsBtn.addEventListener('click', () => {
 // Version 1.11 button
 document.getElementById('version1_11').addEventListener('click', () => {
     console.log('Eagler Craft 1.11 clicked');
-    iframePlayer.src = 'eagler.html';
+    iframePlayer.src = 'eagler1_11.html';
     mediaPlayer.style.display = 'block';
 });
 
@@ -35,6 +35,13 @@ document.getElementById('version1_9_4').addEventListener('click', () => {
 document.getElementById('version_mobile').addEventListener('click', () => {
     console.log('EaglerCraft Mobile (1.8) clicked');
     iframePlayer.src = 'Eagler-3.html';
+    mediaPlayer.style.display = 'block';
+});
+
+// Button 2 click event: Open Monkey.html in the media player iframe
+document.getElementById('btn2').addEventListener('click', () => {
+    console.log('Monkey Game button clicked, opening Monkey.html');
+    iframePlayer.src = 'Monkey.html'; // Open Monkey game
     mediaPlayer.style.display = 'block';
 });
 
