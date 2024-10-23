@@ -127,6 +127,22 @@
         .version-buttons button {
             background-color: #555;
         }
+
+        /* Bug report styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin-top: 20px;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        textarea {
+            resize: none;
+        }
     </style>
 </head>
 <body>
@@ -159,11 +175,33 @@
         <button id="version1_9_4">Eagler 1.9.4</button>
     </div>
 
+    <!-- Bug Report Section -->
+    <h2>Bug Report</h2>
+    <form id="bugReportForm">
+        <label for="bugType">Type of Bug:</label>
+        <select id="bugType" required>
+            <option value="" disabled selected>Select bug type</option>
+            <option value="Visual">Visual Glitch</option>
+            <option value="Performance">Performance Issue</option>
+            <option value="Functionality">Functionality Bug</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="bugDescription">Description:</label>
+        <textarea id="bugDescription" rows="4" required placeholder="Describe the bug..."></textarea>
+
+        <label for="suggestions">Suggestions:</label>
+        <textarea id="suggestions" rows="4" placeholder="Any suggestions for improvement?"></textarea>
+
+        <button type="submit">Submit Bug Report</button>
+    </form>
+
     <!-- Audio element -->
     <audio id="audioPlayer" src="https://raw.githubusercontent.com/Egyorenis/We-Are-Freaks/main/textures/God_Save_the_Schools_Winbooks.custom_score.mp3"></audio>
 
     <!-- Include external JavaScript -->
     <script src="script.js"></script>
+    <script src="bugReport.js"></script>
 
 </body>
 </html>
