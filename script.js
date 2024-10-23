@@ -34,6 +34,12 @@ document.getElementById('version1_9_4').addEventListener('click', () => {
     mediaPlayer.style.display = 'block';
 });
 
+// New EaglerCraft 1.8 (MODDED) button
+document.getElementById('version1_8_modded').addEventListener('click', () => {
+    iframePlayer.src = 'Eaglermodded.html';
+    mediaPlayer.style.display = 'block';
+});
+
 // Button 2 click event: Open Monkey.html in the media player iframe
 btn2.addEventListener('click', () => {
     iframePlayer.src = 'Monkey.html';
