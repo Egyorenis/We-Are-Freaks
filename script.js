@@ -20,7 +20,8 @@ eaglerVersionsBtn.addEventListener('click', () => {
 
 // Eagler Craft version buttons
 document.getElementById('version1_21').addEventListener('click', () => {
-    window.open('EaglercraftX_1.8_Offline_en_US.html', '_blank'); // Open in a new tab
+    iframePlayer.src = 'EaglercraftX_1.8_Offline_en_US.html';
+    mediaPlayer.style.display = 'block';
 });
 
 document.getElementById('version1_11').addEventListener('click', () => {
