@@ -21,29 +21,29 @@ eaglerVersionsBtn.addEventListener('click', () => {
 // Eagler Craft version buttons
 document.getElementById('version1_21').addEventListener('click', () => {
     iframePlayer.src = 'EaglercraftX_1.8_Offline_en_US.html';
-    mediaPlayer.style.display = 'block';
+    mediaPlayer.style.display = 'block'; // Open media player
 });
 
 document.getElementById('version1_11').addEventListener('click', () => {
     iframePlayer.src = 'eagler.html';
-    mediaPlayer.style.display = 'block';
+    mediaPlayer.style.display = 'block'; // Open media player
 });
 
 document.getElementById('version1_9_4').addEventListener('click', () => {
     iframePlayer.src = 'Eagler-2.html';
-    mediaPlayer.style.display = 'block';
+    mediaPlayer.style.display = 'block'; // Open media player
 });
 
 // Button 2 click event: Open Monkey.html in the media player iframe
 btn2.addEventListener('click', () => {
     iframePlayer.src = 'Monkey.html';
-    mediaPlayer.style.display = 'block';
+    mediaPlayer.style.display = 'block'; // Open media player
 });
 
 // Button 3 click event: Open RetroBowlV2T2 (1).html
 btn3.addEventListener('click', () => {
     iframePlayer.src = 'RetroBowlV2T2 (1).html';
-    mediaPlayer.style.display = 'block';
+    mediaPlayer.style.display = 'block'; // Open media player
 });
 
 // Close media player
