@@ -22,7 +22,7 @@ eaglerVersionsBtn.addEventListener('click', () => {
 // Version 1.11 button
 document.getElementById('version1_11').addEventListener('click', () => {
     console.log('Eagler Craft 1.11 clicked');
-    iframePlayer.src = 'eagler1_11.html'; // Open eagler1_11.html
+    iframePlayer.src = 'eagler.html'; // Open eagler1_11.html
     mediaPlayer.style.display = 'block';
 });
 
