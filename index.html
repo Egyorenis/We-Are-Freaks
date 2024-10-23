@@ -15,26 +15,26 @@
             background-color: #f0f0f0;
             margin: 0;
             overflow: hidden;
-            position: relative; /* To position the play button */
+            position: relative;
         }
 
         h1 {
             font-size: 72px;
             color: black;
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added shadow effect */
-            margin-bottom: 20px; /* Adjusted margin */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
         }
 
         h2 {
-            font-size: 24px; /* Size of the new subtitle */
-            color: black; /* Color of the subtitle */
-            margin-top: 0; /* Adjusts margin */
+            font-size: 24px;
+            color: black;
+            margin-top: 0;
         }
 
         .button-container {
-            display: flex; /* Use flexbox for horizontal alignment */
-            gap: 10px; /* Space between buttons */
+            display: flex;
+            gap: 10px;
         }
 
         button {
@@ -52,7 +52,6 @@
             background-color: #45a049;
         }
 
-        /* Fullscreen media player styles */
         .media-player {
             position: fixed;
             top: 0;
@@ -60,7 +59,7 @@
             width: 100%;
             height: 100%;
             background-color: black;
-            display: none; /* Hidden by default */
+            display: none;
             z-index: 10;
         }
 
@@ -70,47 +69,42 @@
             border: none;
         }
 
-        /* Transparent close button */
         .close-btn {
             position: absolute;
             top: 20px;
             right: 20px;
-            background: transparent; /* Transparent background */
-            color: white; /* Visible text */
+            background: transparent;
+            color: white;
             padding: 15px;
-            border: 2px solid white; /* Add border for visibility */
+            border: 2px solid white;
             cursor: pointer;
             z-index: 11;
             font-size: 20px;
             transition: color 0.3s ease;
         }
 
-        /* Add hover effect to close button for visibility */
         .close-btn:hover {
-            color: red; /* Change color when hovered */
+            color: red;
         }
 
-        /* Run in different tab button */
         .run-different-tab-btn {
             position: absolute;
             bottom: 20px;
             left: 20px;
-            background: transparent; /* Transparent background */
-            color: white; /* Visible text */
+            background: transparent;
+            color: white;
             padding: 15px;
-            border: 2px solid white; /* Border to make it visible */
+            border: 2px solid white;
             cursor: pointer;
             z-index: 11;
             font-size: 20px;
             transition: color 0.3s ease;
         }
 
-        /* Hover effect for Run in different tab button */
         .run-different-tab-btn:hover {
-            color: lightgreen; /* Color change when hovered */
+            color: lightgreen;
         }
 
-        /* Eagler Craft Versions button styles */
         .eagler-versions-btn {
             position: absolute;
             top: 10px;
@@ -123,7 +117,6 @@
             cursor: pointer;
         }
 
-        /* Hidden by default */
         .version-buttons {
             display: none;
             flex-direction: column;
@@ -146,7 +139,8 @@
         <button id="btn2">Open Monkey Game</button>
         <button id="btn3">Button 3</button>
     </div>
-    <h3>I am ONLY 13 years old, this website is already updated a-lot. Do not bug me multiple times to add something. If you tell me once, I will do it whenever I can.</h3>
+
+    <h3>I am ONLY 13 years old, this website is already updated a lot. Do not bug me multiple times to add something. If you tell me once, I will do it whenever I can.</h3>
 
     <!-- Fullscreen media player div -->
     <div class="media-player" id="mediaPlayer">
@@ -164,9 +158,11 @@
         <button id="version1_9_4">Eagler 1.9.4</button>
     </div>
 
-    <!-- Updated audio element with raw link -->
+    <!-- Audio element -->
     <audio id="audioPlayer" src="https://raw.githubusercontent.com/Egyorenis/We-Are-Freaks/main/textures/God_Save_the_Schools_Winbooks.custom_score.mp3"></audio>
 
+    <!-- Include external JavaScript -->
     <script src="script.js"></script>
+
 </body>
 </html>
