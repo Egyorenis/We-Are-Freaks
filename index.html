@@ -127,6 +127,45 @@
         .version-buttons button {
             background-color: #555;
         }
+
+        /* Bug report styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin-top: 20px;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        /* Bug report button styles */
+        .bug-report-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #ff4d4d;
+            color: white;
+            border: 2px solid #ff0000;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 0; /* Sharp corners */
+            transition: background-color 0.3s ease;
+        }
+
+        .bug-report-btn:hover {
+            background-color: #ff1a1a;
+        }
+
+        .bug-report-form {
+            display: none; /* Initially hidden */
+        }
     </style>
 </head>
 <body>
@@ -154,8 +193,33 @@
 
     <!-- Eagler Craft Versions buttons -->
     <div class="version-buttons" id="versionButtons">
+        <button id="version1_21">EaglerCraft 1.21</button>
         <button id="version1_11">Eagler Craft 1.11</button>
         <button id="version1_9_4">Eagler 1.9.4</button>
+    </div>
+
+    <!-- Bug Report Section -->
+    <h2>Bug Report</h2>
+    <button class="bug-report-btn" id="bugReportBtn">Bug Report</button>
+    <div class="bug-report-form" id="bugReportForm">
+        <form>
+            <label for="bugType">Type of Bug:</label>
+            <select id="bugType" required>
+                <option value="" disabled selected>Select bug type</option>
+                <option value="Visual">Visual Glitch</option>
+                <option value="Performance">Performance Issue</option>
+                <option value="Functionality">Functionality Bug</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="bugDescription">Description:</label>
+            <textarea id="bugDescription" rows="4" required placeholder="Describe the bug..."></textarea>
+
+            <label for="suggestions">Suggestions:</label>
+            <textarea id="suggestions" rows="4" placeholder="Any suggestions for improvement?"></textarea>
+
+            <button type="submit">Submit Bug Report</button>
+        </form>
     </div>
 
     <!-- Audio element -->
@@ -163,6 +227,7 @@
 
     <!-- Include external JavaScript -->
     <script src="script.js"></script>
+    <script src="bugReport.js"></script>
 
 </body>
 </html>

@@ -19,6 +19,11 @@ eaglerVersionsBtn.addEventListener('click', () => {
 });
 
 // Eagler Craft version buttons
+document.getElementById('version1_21').addEventListener('click', () => {
+    iframePlayer.src = 'EaglercraftX_1.8_Offline_en_US.html';
+    mediaPlayer.style.display = 'block';
+});
+
 document.getElementById('version1_11').addEventListener('click', () => {
     iframePlayer.src = 'eagler.html';
     mediaPlayer.style.display = 'block';
