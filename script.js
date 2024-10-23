@@ -36,7 +36,7 @@ document.getElementById('version1_9_4').addEventListener('click', () => {
 
 // New EaglerCraft 1.8 (MODDED) button
 document.getElementById('version1_8_modded').addEventListener('click', () => {
-    iframePlayer.src = 'Eaglermodded.html';
+    iframePlayer.src = 'eaglermodded - Copy.html';
     mediaPlayer.style.display = 'block';
 });
 
