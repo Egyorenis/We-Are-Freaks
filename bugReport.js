@@ -18,8 +18,6 @@ bugReportForm.addEventListener('submit', (e) => {
     // Gather data
     const bugType = document.getElementById('bugType').value;
     const bugDescription = document.getElementById('bugDescription').value;
-    const suggestions = document.getElementById('suggestions').value;
-
     // Send the bug report to the Discord webhook
     fetch('https://discord.com/api/webhooks/1298767502322434118/iEALRWeBG9RQ6wuqtiMtNfxWi84v-uyJiubZwap2T7EAj7H8hdBryo2i_zrz5vxEfwVs', {
         method: 'POST',
