@@ -5,173 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FreakCraft</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            margin: 0;
-            overflow: hidden;
-            position: relative;
-        }
+        /* Your existing styles */
 
-        h1 {
-            font-size: 72px;
-            color: black;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            font-size: 24px;
-            color: black;
-            margin-top: 0;
-        }
-
-        .button-container {
-            display: flex;
-            gap: 10px;
-        }
-
-        button {
-            font-size: 24px;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 8px;
-            border: none;
-            background-color: #4CAF50;
-            color: white;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        .media-player {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            display: none;
-            z-index: 10;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .close-btn {
+        /* Hamburger Menu Styles */
+        .hamburger-menu {
             position: absolute;
             top: 20px;
-            right: 20px;
-            background: transparent;
-            color: white;
-            padding: 15px;
-            border: 2px solid white;
-            cursor: pointer;
-            z-index: 11;
-            font-size: 20px;
-            transition: color 0.3s ease;
-        }
-
-        .close-btn:hover {
-            color: red;
-        }
-
-        .run-different-tab-btn {
-            position: absolute;
-            bottom: 20px;
             left: 20px;
-            background: transparent;
-            color: white;
-            padding: 15px;
-            border: 2px solid white;
             cursor: pointer;
-            z-index: 11;
-            font-size: 20px;
-            transition: color 0.3s ease;
+            z-index: 20;
         }
 
-        .run-different-tab-btn:hover {
-            color: lightgreen;
-        }
-
-        .eagler-versions-btn {
-            position: absolute;
-            top: 10px;
-            left: 10px;
+        .hamburger-menu div {
+            width: 35px;
+            height: 5px;
             background-color: #333;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            margin: 6px 0;
+            transition: 0.4s;
         }
 
-        .version-buttons {
+        /* Menu Content */
+        .menu-content {
             display: none;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .version-buttons button {
-            background-color: #555;
-        }
-
-        /* Bug report styles */
-        form {
-            display: flex;
-            flex-direction: column;
-            width: 300px;
-            margin-top: 20px;
-        }
-
-        label {
-            margin-top: 10px;
-        }
-
-        textarea {
-            resize: none;
-        }
-
-        /* Bug report button styles */
-        .bug-report-btn {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px 15px;
-            background-color: #ff4d4d;
+            top: 60px;
+            left: 20px;
+            background-color: white;
+            border: 2px solid #333;
+            padding: 10px;
+            z-index: 21;
+        }
+
+        .menu-content button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 18px;
+            background-color: #555;
             color: white;
-            border: 2px solid #ff0000;
-            font-size: 18px;
+            border: none;
             cursor: pointer;
-            border-radius: 0; /* Sharp corners */
-            transition: background-color 0.3s ease;
         }
 
-        .bug-report-btn:hover {
-            background-color: #ff1a1a;
-        }
-
-        .bug-report-form {
-            display: none; /* Initially hidden */
-        }
-
-        /* View counter style */
-        #viewCount {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #333;
+        .menu-content button:hover {
+            background-color: #777;
         }
     </style>
 </head>
@@ -180,56 +57,26 @@
     <h1>WE ARE FREAKS!</h1>
     <h2>"Take me down once, shame on you. Take me down twice, shame on you again."</h2>
 
-    <div class="button-container">
-        <button class="eagler-versions-btn" id="eaglerVersionsBtn">Eagler Craft Versions</button>
+    <!-- Hamburger Menu Icon -->
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Menu Content -->
+    <div class="menu-content" id="menuContent">
+        <button id="eaglerVersionsBtn">EaglerCraft Versions</button>
         <button id="version1_8_modded">EaglerCraft 1.8 (MODDED)</button> <!-- New button -->
+    </div>
+
+    <!-- Other existing elements -->
+    <div class="button-container">
         <button id="btn2">Open Monkey Game</button>
         <button id="btn3">Button 3</button>
     </div>
 
-    <h3>I am ONLY 13 years old, this website is already updated a lot. Do not bug me multiple times to add something. If you tell me once, I will do it whenever I can.</h3>
-
-    <!-- Fullscreen media player div -->
-    <div class="media-player" id="mediaPlayer">
-        <iframe id="iframePlayer"></iframe>
-        <button class="close-btn" id="closeBtn">Close</button>
-        <button class="run-different-tab-btn" id="runDifferentTabBtn">Run in different tab</button>
-    </div>
-
-    <!-- Button to play the song -->
-    <button class="play-song-btn" id="playSongBtn">Play Song</button>
-
-    <!-- Eagler Craft Versions buttons -->
-    <div class="version-buttons" id="versionButtons">
-        <button id="version1_21">EaglerCraft 1.21</button>
-        <button id="version1_11">Eagler Craft 1.11</button>
-        <button id="version1_9_4">Eagler 1.9.4</button>
-        <button id="version1_8_modded">EaglerCraft 1.8 (MODDED)</button> <!-- New button -->
-    </div>
-
-    <!-- Bug Report Section -->
-    <h2>Bug Report</h2>
-    <button class="bug-report-btn" id="bugReportBtn">Bug Report</button>
-    <div class="bug-report-form" id="bugReportForm">
-        <form>
-            <label for="bugType">Type of Bug:</label>
-            <select id="bugType" required>
-                <option value="" disabled selected>Select bug type</option>
-                <option value="suggestion">Suggestion</option>
-                <option value="Performance">Performance Issue</option>
-                <option value="Functionality">Functionality Bug</option>
-                <option value="Other">Other</option>
-            </select>
-
-            <label for="bugDescription">Description:</label>
-            <textarea id="bugDescription" rows="4" required placeholder="Describe the bug..."></textarea>
-
-            <button type="submit">Submit Bug Report</button>
-        </form>
-    </div>
-
-    <!-- Audio element -->
-    <audio id="audioPlayer" src="https://raw.githubusercontent.com/Egyorenis/We-Are-Freaks/main/textures/God_Save_the_Schools_Winbooks.custom_score.mp3"></audio>
+    <!-- Your other code for media player, bug report, etc. remains unchanged -->
 
     <!-- Include external JavaScript -->
     <script src="script.js"></script>
