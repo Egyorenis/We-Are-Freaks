@@ -19,46 +19,33 @@
             position: absolute;
             top: 50px;
             left: 10px;
+            z-index: 10;
         }
 
         /* Media player close and run different tab buttons */
-        .close-btn {
+        .close-btn, .run-different-tab-btn {
             position: absolute;
-            top: 10px;
-            right: 10px;
             background: transparent;
             color: white;
-            padding: 5px; /* Smaller size */
-            border: 1px solid white; /* Smaller size */
+            padding: 5px;
+            border: 1px solid white;
             cursor: pointer;
-            z-index: 11;
-            font-size: 14px; /* Smaller size */
+            font-size: 14px;
             transition: color 0.3s ease, opacity 0.3s ease;
-            opacity: 0.7; /* More transparent */
+            opacity: 0.7;
         }
 
-        .close-btn:hover {
-            color: red;
-            opacity: 1;
+        .close-btn {
+            top: 10px;
+            right: 10px;
         }
 
         .run-different-tab-btn {
-            position: absolute;
             bottom: 10px;
             left: 10px;
-            background: transparent;
-            color: white;
-            padding: 5px; /* Smaller size */
-            border: 1px solid white; /* Smaller size */
-            cursor: pointer;
-            z-index: 11;
-            font-size: 14px; /* Smaller size */
-            transition: color 0.3s ease, opacity 0.3s ease;
-            opacity: 0.7; /* More transparent */
         }
 
-        .run-different-tab-btn:hover {
-            color: lightgreen;
+        .close-btn:hover, .run-different-tab-btn:hover {
             opacity: 1;
         }
 
@@ -72,13 +59,32 @@
             cursor: pointer;
             margin-top: 5px;
         }
+
+        /* Hide menu when media player is visible */
+        #mediaPlayer {
+            display: none;
+        }
+
+        /* Version buttons */
+        #versionButtons {
+            display: none;
+            flex-direction: column;
+        }
+
+        /* Media player styling */
+        #iframePlayer {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
     </style>
 </head>
 <body>
+    <!-- Hamburger menu and EaglerCraft versions button -->
     <div id="hamburgerMenu">☰</div>
     <div id="menuContent">
         <button id="eaglerVersionsBtn">EaglerCraft Versions</button>
-        <div id="versionButtons" style="display:none;">
+        <div id="versionButtons">
             <button id="version1_21">Version 1.8</button>
             <button id="version1_11">Version 1.11</button>
             <button id="version1_9_4">Version 1.9.4</button>
@@ -86,12 +92,14 @@
         </div>
     </div>
 
-    <div id="mediaPlayer" style="display:none;">
+    <!-- Media player -->
+    <div id="mediaPlayer">
         <iframe id="iframePlayer"></iframe>
         <button id="closeBtn" class="close-btn">Close</button>
         <button id="runDifferentTabBtn" class="run-different-tab-btn">Run in Different Tab</button>
     </div>
 
+    <!-- Audio and other controls -->
     <audio id="audioPlayer" src="your-audio-file.mp3"></audio>
     <button id="playSongBtn">Play Song</button>
 
@@ -142,40 +150,34 @@
         // Eagler Craft version buttons
         document.getElementById('version1_21').addEventListener('click', () => {
             iframePlayer.src = 'EaglercraftX_1.8_Offline_en_US.html';
-            mediaPlayer.style.display = 'block';
-            hamburgerMenu.style.display = 'none';
+            showMediaPlayer();
         });
 
         document.getElementById('version1_11').addEventListener('click', () => {
             iframePlayer.src = 'eagler.html';
-            mediaPlayer.style.display = 'block';
-            hamburgerMenu.style.display = 'none';
+            showMediaPlayer();
         });
 
         document.getElementById('version1_9_4').addEventListener('click', () => {
             iframePlayer.src = 'Eagler-2.html';
-            mediaPlayer.style.display = 'block';
-            hamburgerMenu.style.display = 'none';
+            showMediaPlayer();
         });
 
         document.getElementById('version1_8_modded').addEventListener('click', () => {
             iframePlayer.src = 'eaglermodded - Copy.html';
-            mediaPlayer.style.display = 'block';
-            hamburgerMenu.style.display = 'none';
+            showMediaPlayer();
         });
 
         // Button 2 click event
         btn2.addEventListener('click', () => {
             iframePlayer.src = 'Monkey.html';
-            mediaPlayer.style.display = 'block';
-            hamburgerMenu.style.display = 'none';
+            showMediaPlayer();
         });
 
         // Button 3 click event
         btn3.addEventListener('click', () => {
             iframePlayer.src = 'RetroBowlV2T2 (1).html';
-            mediaPlayer.style.display = 'block';
-            hamburgerMenu.style.display = 'none';
+            showMediaPlayer();
         });
 
         // Close media player
@@ -183,6 +185,7 @@
             mediaPlayer.style.display = 'none';
             iframePlayer.src = '';
             hamburgerMenu.style.display = 'block';
+            menuContent.style.display = 'none';
         });
 
         // Play song
@@ -208,6 +211,13 @@
         hamburgerMenu.addEventListener('click', () => {
             menuContent.style.display = menuContent.style.display === 'none' || menuContent.style.display === '' ? 'block' : 'none';
         });
+
+        // Function to show the media player and hide the menu
+        function showMediaPlayer() {
+            mediaPlayer.style.display = 'block';
+            hamburgerMenu.style.display = 'none';
+            menuContent.style.display = 'none';
+        }
     </script>
 </body>
 </html>
