@@ -8,6 +8,8 @@ const playSongBtn = document.getElementById('playSongBtn');
 const audioPlayer = document.getElementById('audioPlayer');
 const eaglerVersionsBtn = document.getElementById('eaglerVersionsBtn');
 const versionButtons = document.getElementById('versionButtons');
+const hamburgerMenu = document.getElementById('hamburgerMenu');
+const menuContent = document.getElementById('menuContent');
 
 // Track page views using localStorage
 function updatePageViewCount() {
@@ -33,7 +35,7 @@ function updatePageViewCount() {
 // Call the function when the page loads
 window.onload = updatePageViewCount;
 
-// Toggle Eagler Craft Versions buttons
+// Toggle Eagler Craft Versions buttons (within hamburger menu)
 eaglerVersionsBtn.addEventListener('click', () => {
     if (versionButtons.style.display === 'none' || versionButtons.style.display === '') {
         versionButtons.style.display = 'flex';
@@ -99,5 +101,14 @@ runDifferentTabBtn.addEventListener('click', () => {
     const currentSrc = iframePlayer.src;
     if (currentSrc) {
         window.open(currentSrc, '_blank');
+    }
+});
+
+// Toggle the hamburger menu
+hamburgerMenu.addEventListener('click', () => {
+    if (menuContent.style.display === 'none' || menuContent.style.display === '') {
+        menuContent.style.display = 'block';
+    } else {
+        menuContent.style.display = 'none';
     }
 });
