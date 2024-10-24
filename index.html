@@ -52,51 +52,6 @@
             background-color: #45a049;
         }
 
-        /* Hamburger Menu styles */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
-
-        .bar {
-            height: 4px;
-            width: 30px;
-            background-color: #333;
-            margin: 4px 0;
-            transition: 0.3s;
-        }
-
-        /* Menu styles */
-        .menu {
-            display: none; /* Initially hidden */
-            flex-direction: column;
-            position: absolute;
-            top: 80px; /* Adjust as necessary */
-            right: 20px;
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            z-index: 10;
-        }
-
-        .menu button {
-            width: 100%;
-            border: none;
-            text-align: left;
-            padding: 10px;
-            background-color: transparent;
-            color: #333;
-            transition: background-color 0.3s ease;
-        }
-
-        .menu button:hover {
-            background-color: #f0f0f0;
-        }
-
-        /* Media player styles */
         .media-player {
             position: fixed;
             top: 0;
@@ -150,6 +105,29 @@
             color: lightgreen;
         }
 
+        .eagler-versions-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .version-buttons {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .version-buttons button {
+            background-color: #555;
+        }
+
         /* Bug report styles */
         form {
             display: flex;
@@ -195,17 +173,6 @@
             font-size: 18px;
             color: #333;
         }
-
-        /* Show hamburger menu on small screens */
-        @media (max-width: 600px) {
-            .button-container {
-                display: none; /* Hide the button container */
-            }
-
-            .hamburger {
-                display: flex; /* Show hamburger menu */
-            }
-        }
     </style>
 </head>
 <body>
@@ -213,17 +180,11 @@
     <h1>WE ARE FREAKS!</h1>
     <h2>"Take me down once, shame on you. Take me down twice, shame on you again."</h2>
 
-    <div class="hamburger" id="hamburger">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
-
-    <div class="menu" id="menu">
-        <button id="version1_8_modded">EaglerCraft 1.8 (MODDED)</button>
+    <div class="button-container">
+        <button class="eagler-versions-btn" id="eaglerVersionsBtn">Eagler Craft Versions</button>
+        <button id="version1_8_modded">EaglerCraft 1.8 (MODDED)</button> <!-- New button -->
         <button id="btn2">Open Monkey Game</button>
         <button id="btn3">Button 3</button>
-        <button onclick="window.location.href='eaglercraft.html'">EaglerCraft Versions</button>
     </div>
 
     <h3>I am ONLY 13 years old, this website is already updated a lot. Do not bug me multiple times to add something. If you tell me once, I will do it whenever I can.</h3>
@@ -237,6 +198,14 @@
 
     <!-- Button to play the song -->
     <button class="play-song-btn" id="playSongBtn">Play Song</button>
+
+    <!-- Eagler Craft Versions buttons -->
+    <div class="version-buttons" id="versionButtons">
+        <button id="version1_21">EaglerCraft 1.21</button>
+        <button id="version1_11">Eagler Craft 1.11</button>
+        <button id="version1_9_4">Eagler 1.9.4</button>
+        <button id="version1_8_modded">EaglerCraft 1.8 (MODDED)</button> <!-- New button -->
+    </div>
 
     <!-- Bug Report Section -->
     <h2>Bug Report</h2>
@@ -265,18 +234,6 @@
     <!-- Include external JavaScript -->
     <script src="script.js"></script>
     <script src="bugReport.js"></script>
-    <script>
-        // Hamburger menu toggle
-        const hamburger = document.getElementById('hamburger');
-        const menu = document.getElementById('menu');
 
-        hamburger.addEventListener('click', () => {
-            if (menu.style.display === 'none' || menu.style.display === '') {
-                menu.style.display = 'flex';
-            } else {
-                menu.style.display = 'none';
-            }
-        });
-    </script>
 </body>
 </html>
