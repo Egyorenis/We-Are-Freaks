@@ -105,29 +105,6 @@
             color: lightgreen;
         }
 
-        .eagler-versions-btn {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .version-buttons {
-            display: none;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .version-buttons button {
-            background-color: #555;
-        }
-
         /* Bug report styles */
         form {
             display: flex;
@@ -181,10 +158,11 @@
     <h2>"Take me down once, shame on you. Take me down twice, shame on you again."</h2>
 
     <div class="button-container">
-        <button class="eagler-versions-btn" id="eaglerVersionsBtn">Eagler Craft Versions</button>
         <button id="version1_8_modded">EaglerCraft 1.8 (MODDED)</button> <!-- New button -->
         <button id="btn2">Open Monkey Game</button>
         <button id="btn3">Button 3</button>
+        <!-- New EaglerCraft Versions Subpage Link -->
+        <button onclick="window.location.href='eaglercraft.html'">EaglerCraft Versions</button>
     </div>
 
     <h3>I am ONLY 13 years old, this website is already updated a lot. Do not bug me multiple times to add something. If you tell me once, I will do it whenever I can.</h3>
@@ -198,14 +176,6 @@
 
     <!-- Button to play the song -->
     <button class="play-song-btn" id="playSongBtn">Play Song</button>
-
-    <!-- Eagler Craft Versions buttons -->
-    <div class="version-buttons" id="versionButtons">
-        <button id="version1_21">EaglerCraft 1.21</button>
-        <button id="version1_11">Eagler Craft 1.11</button>
-        <button id="version1_9_4">Eagler 1.9.4</button>
-        <button id="version1_8_modded">EaglerCraft 1.8 (MODDED)</button> <!-- New button -->
-    </div>
 
     <!-- Bug Report Section -->
     <h2>Bug Report</h2>
