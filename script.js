@@ -9,6 +9,30 @@ const audioPlayer = document.getElementById('audioPlayer');
 const eaglerVersionsBtn = document.getElementById('eaglerVersionsBtn');
 const versionButtons = document.getElementById('versionButtons');
 
+// Track page views using localStorage
+function updatePageViewCount() {
+    let pageViews = localStorage.getItem('pageViews');
+
+    if (!pageViews) {
+        pageViews = 0;
+    }
+
+    // Increment the count
+    pageViews = parseInt(pageViews) + 1;
+
+    // Update localStorage with the new count
+    localStorage.setItem('pageViews', pageViews);
+
+    // Display the count on the page
+    const viewCountElement = document.getElementById('viewCount');
+    if (viewCountElement) {
+        viewCountElement.textContent = `Page Views: ${pageViews}`;
+    }
+}
+
+// Call the function when the page loads
+window.onload = updatePageViewCount;
+
 // Toggle Eagler Craft Versions buttons
 eaglerVersionsBtn.addEventListener('click', () => {
     if (versionButtons.style.display === 'none' || versionButtons.style.display === '') {
