@@ -1,7 +1,6 @@
 // Select elements
 const btn2 = document.getElementById('btn2'); // Button 2 for Monkey.html
 const btn3 = document.getElementById('btn3'); // Button 3 for RetroBowlV2T2 (1).html
-const btn4 = document.getElementById('btn4'); // New button for Idle Breakout (load.html)
 const mediaPlayer = document.getElementById('mediaPlayer');
 const iframePlayer = document.getElementById('iframePlayer');
 const closeBtn = document.getElementById('closeBtn');
@@ -58,62 +57,54 @@ hamburgerMenu.addEventListener('click', () => {
 document.getElementById('version1_21').addEventListener('click', () => {
     iframePlayer.src = 'EaglercraftX_1.8_Offline_en_US.html';
     mediaPlayer.style.display = 'block';
-    eaglerVersionsBtn.style.display = 'none';
-    openNewTabBtn.style.display = 'inline-block';
+    eaglerVersionsBtn.style.display = 'none'; // Hide button when media player is open
+    openNewTabBtn.style.display = 'inline-block'; // Show "Open in Different Tab" button
 });
 
 document.getElementById('version1_11').addEventListener('click', () => {
     iframePlayer.src = 'eagler.html';
     mediaPlayer.style.display = 'block';
-    eaglerVersionsBtn.style.display = 'none';
-    openNewTabBtn.style.display = 'inline-block';
+    eaglerVersionsBtn.style.display = 'none'; // Hide button when media player is open
+    openNewTabBtn.style.display = 'inline-block'; // Show "Open in Different Tab" button
 });
 
 document.getElementById('version1_9_4').addEventListener('click', () => {
     iframePlayer.src = 'Eagler-2.html';
     mediaPlayer.style.display = 'block';
-    eaglerVersionsBtn.style.display = 'none';
-    openNewTabBtn.style.display = 'inline-block';
+    eaglerVersionsBtn.style.display = 'none'; // Hide button when media player is open
+    openNewTabBtn.style.display = 'inline-block'; // Show "Open in Different Tab" button
 });
 
 // New EaglerCraft 1.8 (MODDED) button
 document.getElementById('version1_8_modded').addEventListener('click', () => {
     iframePlayer.src = 'eaglermodded - Copy.html';
     mediaPlayer.style.display = 'block';
-    eaglerVersionsBtn.style.display = 'none';
-    openNewTabBtn.style.display = 'inline-block';
+    eaglerVersionsBtn.style.display = 'none'; // Hide button when media player is open
+    openNewTabBtn.style.display = 'inline-block'; // Show "Open in Different Tab" button
 });
 
 // Button 2 click event: Open Monkey.html in the media player iframe
 btn2.addEventListener('click', () => {
     iframePlayer.src = 'Monkey.html';
     mediaPlayer.style.display = 'block';
-    eaglerVersionsBtn.style.display = 'none';
-    openNewTabBtn.style.display = 'inline-block';
+    eaglerVersionsBtn.style.display = 'none'; // Hide button when media player is open
+    openNewTabBtn.style.display = 'inline-block'; // Show "Open in Different Tab" button
 });
 
 // Button 3 click event: Open RetroBowlV2T2 (1).html
 btn3.addEventListener('click', () => {
     iframePlayer.src = 'RetroBowlV2T2 (1).html';
     mediaPlayer.style.display = 'block';
-    eaglerVersionsBtn.style.display = 'none';
-    openNewTabBtn.style.display = 'inline-block';
-});
-
-// Button 4 click event: Open load.html (Idle Breakout) in the media player iframe
-btn4.addEventListener('click', () => {
-    iframePlayer.src = 'load.html';
-    mediaPlayer.style.display = 'block';
-    eaglerVersionsBtn.style.display = 'none';
-    openNewTabBtn.style.display = 'inline-block';
+    eaglerVersionsBtn.style.display = 'none'; // Hide button when media player is open
+    openNewTabBtn.style.display = 'inline-block'; // Show "Open in Different Tab" button
 });
 
 // Close media player
 closeBtn.addEventListener('click', () => {
     mediaPlayer.style.display = 'none';
     iframePlayer.src = ''; // Clear iframe source
-    eaglerVersionsBtn.style.display = 'block';
-    openNewTabBtn.style.display = 'none';
+    eaglerVersionsBtn.style.display = 'block'; // Show button when media player is closed
+    openNewTabBtn.style.display = 'none'; // Hide "Open in Different Tab" button
 });
 
 // Run in a different tab
