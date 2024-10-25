@@ -10,22 +10,16 @@ const eaglerVersionsBtn = document.getElementById('eaglerVersionsBtn');
 const versionButtons = document.getElementById('versionButtons');
 const hamburgerMenu = document.getElementById('hamburgerMenu');
 const openNewTabBtn = document.getElementById('openNewTabBtn');
+const runDifferentTabBtn = document.getElementById('runDifferentTabBtn'); // New button
 
 // Track page views using localStorage
 function updatePageViewCount() {
     let pageViews = localStorage.getItem('pageViews');
-
     if (!pageViews) {
         pageViews = 0;
     }
-
-    // Increment the count
     pageViews = parseInt(pageViews) + 1;
-
-    // Update localStorage with the new count
     localStorage.setItem('pageViews', pageViews);
-
-    // Display the count on the page
     const viewCountElement = document.getElementById('viewCount');
     if (viewCountElement) {
         viewCountElement.textContent = `Page Views: ${pageViews}`;
@@ -57,58 +51,55 @@ hamburgerMenu.addEventListener('click', () => {
 document.getElementById('version1_21').addEventListener('click', () => {
     iframePlayer.src = 'EaglercraftX_1.8_Offline_en_US.html';
     mediaPlayer.style.display = 'block';
-    eaglerVersionsBtn.style.display = 'none'; // Hide button when media player is open
-    openNewTabBtn.style.display = 'inline-block'; // Show "Open in Different Tab" button
+    eaglerVersionsBtn.style.display = 'none';
+    openNewTabBtn.style.display = 'inline-block';
 });
 
 document.getElementById('version1_11').addEventListener('click', () => {
     iframePlayer.src = 'eagler.html';
     mediaPlayer.style.display = 'block';
-    eaglerVersionsBtn.style.display = 'none'; // Hide button when media player is open
-    openNewTabBtn.style.display = 'inline-block'; // Show "Open in Different Tab" button
+    eaglerVersionsBtn.style.display = 'none';
+    openNewTabBtn.style.display = 'inline-block';
 });
 
 document.getElementById('version1_9_4').addEventListener('click', () => {
     iframePlayer.src = 'Eagler-2.html';
     mediaPlayer.style.display = 'block';
-    eaglerVersionsBtn.style.display = 'none'; // Hide button when media player is open
-    openNewTabBtn.style.display = 'inline-block'; // Show "Open in Different Tab" button
+    eaglerVersionsBtn.style.display = 'none';
+    openNewTabBtn.style.display = 'inline-block';
 });
 
-// New EaglerCraft 1.8 (MODDED) button
 document.getElementById('version1_8_modded').addEventListener('click', () => {
     iframePlayer.src = 'eaglermodded - Copy.html';
     mediaPlayer.style.display = 'block';
-    eaglerVersionsBtn.style.display = 'none'; // Hide button when media player is open
-    openNewTabBtn.style.display = 'inline-block'; // Show "Open in Different Tab" button
+    eaglerVersionsBtn.style.display = 'none';
+    openNewTabBtn.style.display = 'inline-block';
 });
 
-// Button 2 click event: Open Monkey.html in the media player iframe
 btn2.addEventListener('click', () => {
     iframePlayer.src = 'Monkey.html';
     mediaPlayer.style.display = 'block';
-    eaglerVersionsBtn.style.display = 'none'; // Hide button when media player is open
-    openNewTabBtn.style.display = 'inline-block'; // Show "Open in Different Tab" button
+    eaglerVersionsBtn.style.display = 'none';
+    openNewTabBtn.style.display = 'inline-block';
 });
 
-// Button 3 click event: Open RetroBowlV2T2 (1).html
 btn3.addEventListener('click', () => {
     iframePlayer.src = 'RetroBowlV2T2 (1).html';
     mediaPlayer.style.display = 'block';
-    eaglerVersionsBtn.style.display = 'none'; // Hide button when media player is open
-    openNewTabBtn.style.display = 'inline-block'; // Show "Open in Different Tab" button
+    eaglerVersionsBtn.style.display = 'none';
+    openNewTabBtn.style.display = 'inline-block';
 });
 
 // Close media player
 closeBtn.addEventListener('click', () => {
     mediaPlayer.style.display = 'none';
     iframePlayer.src = ''; // Clear iframe source
-    eaglerVersionsBtn.style.display = 'block'; // Show button when media player is closed
-    openNewTabBtn.style.display = 'none'; // Hide "Open in Different Tab" button
+    eaglerVersionsBtn.style.display = 'block';
+    openNewTabBtn.style.display = 'none';
 });
 
 // Run in a different tab
-document.getElementById('runDifferentTabBtn').addEventListener('click', () => {
+runDifferentTabBtn.addEventListener('click', () => {
     window.open(iframePlayer.src, '_blank');
 });
 
