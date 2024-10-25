@@ -58,8 +58,10 @@
             border: none;
         }
 
+        /* Updated positioning for buttons */
         .close-btn, .run-different-tab-btn {
             position: absolute;
+            top: 10px; /* Align both buttons at the same Y level */
             background: transparent;
             color: white;
             padding: 10px;
@@ -70,13 +72,16 @@
             transition: color 0.3s ease;
         }
 
+        .close-btn {
+            left: 10px;
+        }
+
         .close-btn:hover {
             color: red;
         }
 
         .run-different-tab-btn {
-            top: 10px;
-            left: 80px;
+            left: 100px;
         }
 
         .run-different-tab-btn:hover {
