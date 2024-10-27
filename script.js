@@ -11,6 +11,7 @@ const versionButtons = document.getElementById('versionButtons');
 const hamburgerMenu = document.getElementById('hamburgerMenu');
 const openNewTabBtn = document.getElementById('openNewTabBtn');
 const runDifferentTabBtn = document.getElementById('runDifferentTabBtn'); // New button
+const starlikeBtn = document.getElementById('starlikeBtn'); // STARLIKE button
 
 // Track page views using localStorage
 function updatePageViewCount() {
@@ -76,12 +77,12 @@ document.getElementById('version1_8_modded').addEventListener('click', () => {
     openNewTabBtn.style.display = 'inline-block';
 });
 
-// New STARLIKE button functionality
-document.getElementById('starlikeBtn').addEventListener('click', () => {
-    iframePlayer.src = 'Starlike_Client_Offline.html';
-    mediaPlayer.style.display = 'block';
-    eaglerVersionsBtn.style.display = 'none';
-    openNewTabBtn.style.display = 'inline-block';
+// STARLIKE button
+starlikeBtn.addEventListener('click', () => {
+    iframePlayer.src = 'Starlike_Client_Offline.html'; // Load Starlike Client
+    mediaPlayer.style.display = 'block'; // Show media player
+    eaglerVersionsBtn.style.display = 'none'; // Hide EaglerCraft versions button
+    openNewTabBtn.style.display = 'inline-block'; // Show open in different tab button
 });
 
 // Open Monkey.html
