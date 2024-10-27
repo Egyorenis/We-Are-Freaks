@@ -76,6 +76,15 @@ document.getElementById('version1_8_modded').addEventListener('click', () => {
     openNewTabBtn.style.display = 'inline-block';
 });
 
+// New STARLIKE button functionality
+document.getElementById('starlikeBtn').addEventListener('click', () => {
+    iframePlayer.src = 'Starlike_Client_Offline.html';
+    mediaPlayer.style.display = 'block';
+    eaglerVersionsBtn.style.display = 'none';
+    openNewTabBtn.style.display = 'inline-block';
+});
+
+// Open Monkey.html
 btn2.addEventListener('click', () => {
     iframePlayer.src = 'Monkey.html';
     mediaPlayer.style.display = 'block';
@@ -83,6 +92,7 @@ btn2.addEventListener('click', () => {
     openNewTabBtn.style.display = 'inline-block';
 });
 
+// Open RetroBowlV2T2 (1).html
 btn3.addEventListener('click', () => {
     iframePlayer.src = 'RetroBowlV2T2 (1).html';
     mediaPlayer.style.display = 'block';
